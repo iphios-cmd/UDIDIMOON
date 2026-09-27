@@ -421,6 +421,17 @@
     (function () {
       var tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
 
+      if (!tg && new URLSearchParams(window.location.search).get("preview") === "1") {
+        tg = {
+          expand: function () {},
+          ready: function () {},
+          openLink: function (url) { window.open(url, "_blank", "noopener,noreferrer"); },
+          setBackgroundColor: function () {},
+          setHeaderColor: function () {},
+          disableVerticalSwipes: function () {}
+        };
+      }
+
       if (tg && typeof tg.expand === "function") {
         tg.expand();
       }
