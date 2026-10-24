@@ -194,27 +194,6 @@
       animation: glow 4.2s ease-in-out infinite;
     }
 
-    .orbit {
-      position: absolute;
-      inset: -14px;
-      border-radius: 50%;
-      border: 1px dashed rgba(139, 125, 255, 0.35);
-      animation: spin 22s linear infinite;
-    }
-
-    .orbit::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -4px;
-      width: 8px;
-      height: 8px;
-      margin-top: -4px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 0 12px 3px rgba(139, 125, 255, 0.9);
-    }
-
     .logo {
       position: relative;
       width: 100%;
@@ -610,8 +589,6 @@
       50%      { opacity: 1;    transform: scale(1.06); }
     }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
-
     @keyframes float {
       0%, 100% { transform: translateY(0) rotate(0deg); }
       50%      { transform: translateY(-9px) rotate(-1.5deg); }
@@ -697,7 +674,6 @@
       <header class="hero">
         <div class="logo-wrap reveal" style="--d: 0s">
           <div class="logo-glow"></div>
-          <div class="orbit"></div>
           <svg class="logo" id="logo" viewBox="0 0 200 200" aria-hidden="true">
             <defs>
               <radialGradient id="disc" cx="45%" cy="40%" r="65%">
